@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Peliculas>
+
+@{
+    ViewData["Title"] = "All Reservations";
+}
+<form method="get">
+    <div class="form-group">
+        <label for="pelicula">Título:</label>
+        <input type="text" class="form-control" id="pelicula" name="pelicula">
+    </div>
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<h2>Peliculas</h2>
+
+
+<table class="table table-sm table-striped table-bordered m-2">
+    <thead>
+        <tr>
+            <th>Titulo</th>
+            <th>Año</th>
+            <th>Calificado</th>
+            <th>Poster</th>
+            <th>Descripción</th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Title</td>
+                <td>@r.Year</td>
+                <td>@r.Type</td>
+                <td> <img src="@r.Poster" alt="@r.Title" /></td>
+                <td>@r.Plot</td>
+                <td>
+                   
+                </td>
+                <td>
+              
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
